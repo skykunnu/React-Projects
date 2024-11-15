@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#boxes{
+    margin: 4rem auto;
+    width: 80vw;
+    display: flex;
+    gap: 2rem;
+}
+
+.box{
+    width: 25%;
+}
+
+.box img{
+    width: 100%;
+}
+
+.box h2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.box p{
+    text-align: justify;
+}
