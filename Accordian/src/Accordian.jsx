@@ -8,6 +8,12 @@ function Accordian() {
       <AccordBox heading="Heading 2"/>
       <AccordBox heading="Heading 3"/>
       <AccordBox heading="Heading 4"/>
+      <AccordBox heading="Heading 4"/>
+      <AccordBox heading="Heading 4"/>
+      <AccordBox heading="Heading 4"/>
+      <AccordBox heading="Heading 4"/>
+      <AccordBox heading="Heading 4"/>
+      <AccordBox heading="Heading 4"/>
 
   </div>
     </div>
