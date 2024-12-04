@@ -54,8 +54,3 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
-
-/* Additional styling if needed */
-.matched {
-  opacity: 0.6;
-}
