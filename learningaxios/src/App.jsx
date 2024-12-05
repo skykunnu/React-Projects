@@ -12,12 +12,14 @@ function App() {
 
   return (
     <>
-      <button onClick={handleClick}>Click Me</button>
       <input type="text" placeholder="Enter Movie Name" value={value} onChange={(e)=>setValue(e.target.value)} />
+      <button onClick={handleClick}>Click Me</button>
       <ul>
         {data.map((item)=>(
 
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>{item.title}<p>{item.overview}</p></li>
+
+          
         ))}
       </ul>
     </>
