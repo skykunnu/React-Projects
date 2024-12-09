@@ -13,22 +13,27 @@ button{
   font-size:20px;
 }
 .show {
-  display: flex;
-  justify-content: space-evenly; 
-  flex-wrap: wrap; 
-  gap:1.2rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem; 
+  display: flex; 
+  gap:1rem;
+  margin: 1rem; 
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: visible;
 }
 
-.show .imges {
+.show .images {
   flex: 1 1 calc(25% - 1rem);
-  width: 20rem; 
+  width: 25%; 
   height: 25rem; 
+ 
 }
 
 .images img{
   height:20rem;
-  width: 100%;
+  object-fit: contain;
 }
 
+
+.show h3{
+ text-align: center;
+}
