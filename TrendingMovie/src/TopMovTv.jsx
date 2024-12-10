@@ -38,7 +38,7 @@ function TopMovTv() {
                <div className="images" key={item.id}>
                 <img src={img_base_path+item.poster_path} alt="" />
                 <h3>{item.title || item.name}</h3>
-                <h5>{item.release_date || item.first_air_date}</h5>
+                <h5>{new Date(item.release_date).toLocaleDateString("en-GB") || new Date(item.first_air_date).toLocaleDateString("en-GB")}</h5>
                 <p>{item.genre_ids[1] || item.genre_ids}</p>
 
                </div>
