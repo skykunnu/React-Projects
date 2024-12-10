@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import DayWeek from './DayWeek'
-import PopMovTv from './PopMovTv'
-import TopMovTv from './TopMovTv'
+import DayWeek from './DayWeek.jsx'
+import PopMovTv from './PopMovTv.jsx'
+import TopMovTv from './TopMovTv.jsx'
 import "./App.css"
 
 
