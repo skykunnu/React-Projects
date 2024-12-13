@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -43,13 +44,16 @@ const router= createBrowserRouter([
 
 function App() {
   const [cart , setCart] = useState([])
+
+
   function handleAddToCart(product){
     setCart([...cart,product])
   }
-  console.log(cart);
-  function handleRemoveFromCart(obj){
-const num=cart.filter((item)=> item.id!==obj.id)
-// console.log(cart);
+  
+
+
+  function handleRemoveFromCart(id){
+const num=cart.filter((item)=> item.id!==id)
 return setCart([...num])
 
   }

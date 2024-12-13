@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
-import { useContext } from "react";
+import { useContext} from "react";
 import { Link } from "react-router-dom";
 import { ecomcontext } from "../App";
-import { IoIosAddCircle } from "react-icons/io";
-import { GrSubtractCircle } from "react-icons/gr";
+import CardQuant from "./CardQuant";
+
 
 
 
 function Product({ product }) {
   const {cart, handleAddToCart} = useContext(ecomcontext);
+ 
 
   function trimContent(input, limit) {
     return input.length > limit ? input.slice(0, limit + 1) + "..." : input;
@@ -27,7 +28,7 @@ function Product({ product }) {
         </h3>
         <p className="price">${product.price}</p>
         {
-          cart.find((item)=>item.id===product.id) ? (<div><IoIosAddCircle /><GrSubtractCircle /></div>) : (<div><Link
+          cart.find((item)=>item.id===product.id)!==undefined ? (<CardQuant id={product.id} />) : (<div><Link
           className="addToCart"
           onClick={(e) => {
             e.preventDefault();

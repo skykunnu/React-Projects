@@ -1,27 +1,23 @@
 /* eslint-disable react/jsx-key */
 import  { useContext } from "react";
 import { ecomcontext } from "../App";
-import { Link } from "react-router-dom";
+import CardQuant from "../components/CardQuant";
+
 function Cart() {
-  const { cart, handleRemoveFromCart } = useContext(ecomcontext);
+  const { cart} = useContext(ecomcontext);
   return (
     <>
       {cart.map((item) => {
         return (
-          <div>
-            <div className="cartimg">
-              <img src={item.image} alt="" />
+          <div className="Cart">
+            <div className="cartImage">
+            <img src={item.image} alt="" />
             </div>
+            <div className="cartItem">
             <h3>{item.title}</h3>
             <p>${item.price}</p>
-            <Link
-              onClick={(e) => {
-                e.preventDefault();
-                handleRemoveFromCart(item);
-              }}
-            >
-              Remove Item
-            </Link>
+            <CardQuant id={item.id} />
+            </div>
           </div>
         );
       })}

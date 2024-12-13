@@ -1,10 +1,15 @@
 import axios from "axios"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
-
+import { ecomcontext } from "../App";
+import CardQuant from "../components/CardQuant";
 function SingleProduct() {
+
+
+
   const {id}=useParams(); // to get the dynamic part of the URL. 
   const [product,setProduct]=useState({});
+  const {cart,handleAddToCart} = useContext(ecomcontext);
 
 
 useEffect(()=>{
@@ -30,7 +35,18 @@ async function fetchData(id){
         <p className="category">Category:- {product.category}</p>
         <p className="description">{product.description}</p>
         <p className="price">${product.price}</p>
-        <Link className="addToCart">Add To Cart</Link>
+        {
+          cart.find((item)=>item.id===product.id)!==undefined ? (<CardQuant id={product.id} />) : (<div><Link
+          className="addToCart"
+          onClick={(e) => {
+            e.preventDefault();
+            handleAddToCart(product);
+
+          }}
+        >
+          Add To Cart
+        </Link></div>)
+        }
       </div>
     </div>
     ):(
