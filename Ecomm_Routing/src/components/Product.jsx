@@ -1,0 +1,48 @@
+/* eslint-disable react/prop-types */
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ecomcontext } from "../App";
+import { IoIosAddCircle } from "react-icons/io";
+import { GrSubtractCircle } from "react-icons/gr";
+
+
+
+function Product({ product }) {
+  const {cart, handleAddToCart} = useContext(ecomcontext);
+
+  function trimContent(input, limit) {
+    return input.length > limit ? input.slice(0, limit + 1) + "..." : input;
+  }
+
+  return (
+    <>
+      <div className="product">
+        <Link to={`/product/${product.id}`}>
+          <img src={product.image} alt="" />
+        </Link>
+        <h3 className="title">
+          <Link to={`/product/${product.id}`}>
+            {trimContent(product.title, 40)}
+          </Link>
+        </h3>
+        <p className="price">${product.price}</p>
+        {
+          cart.find((item)=>item.id===product.id) ? (<div><IoIosAddCircle /><GrSubtractCircle /></div>) : (<div><Link
+          className="addToCart"
+          onClick={(e) => {
+            e.preventDefault();
+            handleAddToCart(product);
+
+          }}
+        >
+          Add To Cart
+        </Link></div>)
+        }
+        
+
+      </div>
+    </>
+  );
+}
+
+export default Product;
