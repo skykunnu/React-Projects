@@ -16,7 +16,7 @@ function addAvatar(){
   Obj.id=Date.now()
   Obj.name=avatarName.slice(0,1).toUpperCase();
   setAvatars((prev)=>{
-    return[...prev,Obj]})
+    return  [...prev,Obj]})
     setShowCreate((prev)=>!prev)
     setAvatarName("")
 }
