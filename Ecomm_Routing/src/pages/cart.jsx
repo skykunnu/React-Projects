@@ -2,11 +2,14 @@
 import  { useContext } from "react";
 import { ecomcontext } from "../App";
 import CardQuant from "../components/CardQuant";
+import { Link } from "react-router-dom";
+
 
 function Cart() {
   const { cart} = useContext(ecomcontext);
   return (
-    <>
+     <div className="mainDiv">
+      <div className="mainDiv1">
       {cart.map((item) => {
         return (
           <div className="Cart">
@@ -19,9 +22,17 @@ function Cart() {
             <CardQuant id={item.id} />
             </div>
           </div>
+
         );
       })}
-    </>
+      </div>
+
+      <div className="mainDiv2">
+<div className="subtotal"><p>SubTotal ({cart.length}) items</p></div>
+<div className="checkout"><Link to="/login">Checkout</Link></div>
+      </div>
+
+  </div>
   );
 }
 

@@ -8,6 +8,9 @@ import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart"
 import './Ecommerce.css'
 import { createContext, useState } from "react";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
  
 export const ecomcontext = createContext(null)
 
@@ -36,7 +39,20 @@ const router= createBrowserRouter([
       {
         path:"/Cart",
         element: <Cart/>
-      }
+      },
+      {
+        path:"/checkout",
+        element: <ProtectedRoute/>
+      },
+      {
+        path:"/register",
+        element: <Register/>
+      },
+      {
+        path:"/login",
+        element: <Login/>
+      },
+      
     ]
   }
 ])

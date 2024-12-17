@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import Product from '../components/Product.jsx'
-import axios from "axios"
+import instance from '../axiosConfig.js'
 
 
 function First() {
 const [products, setProducts]=useState([])
 
 async function fetchData(){
-    const response=await axios.get(`https://fakestoreapi.com/products`);
+    const response=await instance(`/products`);
     setProducts(response.data);
 }
 

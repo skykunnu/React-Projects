@@ -1,4 +1,4 @@
-import axios from "axios"
+import instance from "../axiosConfig";
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import { ecomcontext } from "../App";
@@ -17,7 +17,7 @@ useEffect(()=>{
 },[id]);
 
 async function fetchData(id){
-  const response=await axios.get("https://fakestoreapi.com/products/"+id);
+  const response=await instance(`/products/${id}`);
   setProduct(response.data);
 }
 

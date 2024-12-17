@@ -6,7 +6,7 @@ function Header() {
   const {cart}=useContext(ecomcontext)
   return (
     <header>
-      <h1>Myntra</h1>
+      <h1><Link to="/" className="heading">Myntra</Link></h1>
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
