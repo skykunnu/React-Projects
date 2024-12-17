@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F0BB78;
+    display: flex;
+    align-items: center;
+    justify-content: center
+
+}
+
+.avatar-wrapper{
+    background-color: cornflowerblue;
+    height: 250px;
+    width: 500px;
+    display: flex;
+    margin: 9rem auto;
+    flex-direction: column;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+}
+
+.avatar-wrapper h2{
+    font-size: 30px;
+    margin: 2rem auto;
+}
+
+
+.right button{
+    margin-left: 14rem;
+    font-size: 32px;
+    padding: 0 10px;
+    border-radius: 50%;
+    border: none;
+}
+
+.avatars{
+    display: flex;
+    flex-direction: column;
+}
+.left{
+    margin: 2rem auto;
+}
+.avatar{
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    padding: 8px 12px;
+    margin: 1px;
+    position: relative;
+}
+
+.create{
+position: absolute;
+height: 7rem;
+width: 12rem;
+border-radius: 10px;
+border: 1px solid black;
+background-color: bisque;
+top: 5rem;
+left: 10rem;
+padding: 10px;
+text-align: center;
+z-index: 1;
+}
+
+.delete{
+position: absolute;
+height: 7rem;
+width: 12rem;
+border-radius: 10px;
+border: 1px solid black;
+background-color: bisque;
+top: 5rem;
+left: 10rem;
+padding: 10px;
+text-align: center;
+}
+
+.create input{
+    margin: 10px 0px;
+    font-size: 13px;
+
+}
+
+.create button{
+margin: 0px 4px;
+padding: 0px 5px;
+}
+
+.popup{
+    display: none;
+}
+
+.deleteIcon{
+position: absolute;
+top: -3px;
+right: -3px;
+}
