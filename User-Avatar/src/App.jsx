@@ -10,6 +10,7 @@ const [showCreate,setShowCreate]=useState(false); // it is for creating create a
 const [avatarName, setAvatarName]=useState(""); // it is for storing names of avatar.
 const [avatars,setAvatars]=useState([]); // it is for storing each avatar inside the array of it. 
 const [showDelete,setShowDelete]=useState(false); // it is for creating delete avatar div. 
+const [selectedAvatarId, setSelectedAvatarId]=useState(null);
 
 function addAvatar(){
   const Obj={};
@@ -21,10 +22,14 @@ function addAvatar(){
     setAvatarName("")
 }
 
+function handleAvatar(){
+  setAvatars((prev)=>prev.filter((avatar)=>avatar.id!==selectedAvatarId));
+  setShowDelete((prev)=>!prev)
+  setSelectedAvatarId(null)
 
-function handleDelete(id){
-  setAvatars((prev)=>prev.filter((avatar)=>avatar.id!==id));
 }
+
+
 
   return (
     <div className="avatar-wrapper">
@@ -53,7 +58,6 @@ onChange={(e)=>setAvatarName(e.target.value)}
   onClick={()=>{
     setAvatarName("");
     setShowCreate((prev)=>!prev)
-    setShowDelete((prev)=>!prev)
   }}
   >Cancel</button>
   {/* As we click on create button addAvatar function is called in which an object is created having id & name as keys and all these is being pushed into setAvatars state. and inside this function we have change the state of setShowCreate to false to hide it.  */}
@@ -66,11 +70,12 @@ onChange={(e)=>setAvatarName(e.target.value)}
 <div className="btns">
   <p>Are you sure you want to delete ?</p>
 <button onClick={()=>{
-  setShowCreate((prev)=>!prev);
-  setShowDelete((prev)=>!prev)}}>
+  setShowDelete((prev)=>!prev)
+  setSelectedAvatarId(null)
+  }}>
   Cancel
 </button>
-<button onClick={()=>{setShowDelete((prev)=>!prev)}}>Confirm</button>
+<button onClick={()=>handleAvatar()}>Confirm</button>
 </div>
 </div>
       <div className="avatars">
@@ -85,7 +90,9 @@ onChange={(e)=>setAvatarName(e.target.value)}
       {
         avatars.length>0 && avatars.map((avatar)=>{
           return (
-        <span className="avatar" key={avatar.id} >{avatar.name} <RxCrossCircled className="deleteIcon" onClick={()=>handleDelete(avatar.id)} /></span>
+        <span className="avatar" key={avatar.id} >{avatar.name} <RxCrossCircled className="deleteIcon" onClick={()=>{
+          setShowDelete((prev)=>!prev) 
+          setSelectedAvatarId(avatar.id)}} /></span>
         
         
 

@@ -63,18 +63,33 @@ function App() {
 
 
   function handleAddToCart(product){
-    setCart([...cart,product])
+    
+    setCart([...cart,{...product,quantity:1}])
   }
   
+console.log(cart);
 
+function changeQuantity(id,action){
+  if(action==="inc"){
+    setCart(cart.map((item)=>{ return item.id===id ? {...item,quantity:item.quantity+1}:item})) 
+  }
 
-  function handleRemoveFromCart(id){
-const num=cart.filter((item)=> item.id!==id)
-return setCart([...num])
+  else{
+    setCart(cart.map((item)=>{ return item.id===id ? {...item,quantity:item.quantity-1}:item})) 
 
   }
+}
+
+  function handleRemoveFromCart(id){
+
+return setCart([...(cart.filter((item)=> item.id!==id))])
+
+  }
+
+
+
   return (
-    <ecomcontext.Provider value={{cart, handleAddToCart,handleRemoveFromCart}}>
+    <ecomcontext.Provider value={{cart, handleAddToCart,handleRemoveFromCart,changeQuantity}}>
     <RouterProvider router={router}></RouterProvider>
     </ecomcontext.Provider>
   )

@@ -110,18 +110,20 @@ footer {
 }
 .Icons{
   margin-top: 20px;
+  display: flex;
 }
+
 
 .addIcon,.subIcon, .DelIcon{
 font-size: 1.5rem;
 color: black;
-margin: 0rem 1rem;
+margin: 1rem 1rem;
 cursor: pointer;
 }
 
 .Icons button{
   font-size: 1.5rem;
-  padding:0rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .mainDiv{
