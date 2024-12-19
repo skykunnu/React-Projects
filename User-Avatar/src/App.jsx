@@ -10,8 +10,10 @@ const [showCreate,setShowCreate]=useState(false); // it is for creating create a
 const [avatarName, setAvatarName]=useState(""); // it is for storing names of avatar.
 const [avatars,setAvatars]=useState([]); // it is for storing each avatar inside the array of it. 
 const [showDelete,setShowDelete]=useState(false); // it is for creating delete avatar div. 
-const [selectedAvatarId, setSelectedAvatarId]=useState(null);
+const [selectedAvatarId, setSelectedAvatarId]=useState(null); // it is storing the id of avatar being selected. 
 
+
+// Below is the function creating the id and name of the avatar. 
 function addAvatar(){
   const Obj={};
   Obj.id=Date.now()
@@ -22,6 +24,7 @@ function addAvatar(){
     setAvatarName("")
 }
 
+// Below is the function deleting the avatar which is being selected to be deleted. 
 function handleAvatar(){
   setAvatars((prev)=>prev.filter((avatar)=>avatar.id!==selectedAvatarId));
   setShowDelete((prev)=>!prev)
@@ -70,6 +73,7 @@ onChange={(e)=>setAvatarName(e.target.value)}
 <div className="btns">
   <p>Are you sure you want to delete ?</p>
 <button onClick={()=>{
+  // on cancelling the avatar from being deleted two things will be happen delete pop up will be hidden and selected avatar id will be set to null.
   setShowDelete((prev)=>!prev)
   setSelectedAvatarId(null)
   }}>
@@ -92,7 +96,7 @@ onChange={(e)=>setAvatarName(e.target.value)}
           return (
         <span className="avatar" key={avatar.id} >{avatar.name} <RxCrossCircled className="deleteIcon" onClick={()=>{
           setShowDelete((prev)=>!prev) 
-          setSelectedAvatarId(avatar.id)}} /></span>
+          setSelectedAvatarId(avatar.id)}} /></span> // on clicking of cross sign on an avatar a confirmation pop up will be enable and selected avatar id is being given to setSelectedAvatarId.  
         
         
 
