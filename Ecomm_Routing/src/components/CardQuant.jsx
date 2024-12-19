@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { ecomcontext } from "../App";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { FiMinusCircle } from "react-icons/fi";
