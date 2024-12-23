@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
-import { ecomcontext } from "../App";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { FiMinusCircle } from "react-icons/fi";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { MdDelete } from "react-icons/md";
+import { useEcom } from "../context/Ecom";
 
 
 function CardQuant({ id }) {
-  const {handleRemoveFromCart, changeQuantity } = useContext(ecomcontext)
+  // const {handleRemoveFromCart, changeQuantity } = useContext(ecomcontext)
+  const {handleRemoveFromCart, changeQuantity } = useEcom();
   const [count, setCount] = useState(1)
  
 

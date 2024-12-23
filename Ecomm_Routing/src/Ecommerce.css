@@ -185,3 +185,9 @@ cursor: pointer;
   color: #000;
 }
 
+.logoutbtn{
+  padding: 3px 5px;
+  font-size: 15px;
+}
+
+

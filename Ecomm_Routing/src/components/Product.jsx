@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import { useContext} from "react";
+// import { useContext} from "react";
 import { Link } from "react-router-dom";
-import { ecomcontext } from "../App";
+// import { ecomcontext } from "../App";
 import CardQuant from "./CardQuant";
+import { useEcom } from "../context/Ecom";
 
 
 
 
 function Product({ product }) {
-  const {cart, handleAddToCart} = useContext(ecomcontext);
+  // const {cart, handleAddToCart} = useContext(ecomcontext);
+  const {cart, handleAddToCart} = useEcom();
  
 
   function trimContent(input, limit) {

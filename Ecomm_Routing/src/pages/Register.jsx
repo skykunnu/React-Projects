@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import {createUserWithEmailAndPassword, updateProfile} from "firebase/auth"
 import {auth} from '../firebase'
 function Register() {
-
+ const [message,setMessage]=useState(false)
     const [data,setData]=useState({
         username:"",
         email:"",
@@ -26,6 +26,12 @@ setData({username:"",
     password:""
 });
 
+
+if(userCredentials) setMessage(true)
+else{
+    setMessage(false)
+}
+
 }
 
 
@@ -33,6 +39,7 @@ setData({username:"",
 
   return (
     <>
+    {message && <h3>You are logged In</h3>}
     <form action="" onSubmit={handleSubmit}>
 <input type="text" name="username" placeholder="username" value={data.username} onChange={handleChange}/>
 <br />
