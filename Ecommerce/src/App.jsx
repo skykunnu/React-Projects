@@ -6,6 +6,7 @@ import SingleProduct from "../pages/SingleProduct";
 
 
 
+
 function App() {
 
 const router= createBrowserRouter([
@@ -18,7 +19,7 @@ const router= createBrowserRouter([
         element:<First />
       },
       {
-        path:'',
+        path:'product',
         element:<SingleProduct/>
       }
 
