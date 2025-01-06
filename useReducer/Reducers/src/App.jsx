@@ -1,9 +1,9 @@
-import Counter from "./Counter"
+// import Counter from "./Counter"
 import Todolist from "./Todolist"
 function App() {
   return (
     <>
-    <Counter />
+    {/* <Counter /> */}
     <Todolist />
     </>
   )
