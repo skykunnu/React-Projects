@@ -3,20 +3,35 @@ import { useState } from "react";
 function TodoList() {
   const [input, setInput] = useState("");
   const [Tasks, setTask] = useState([]);
+  const [editingId, setEditingId] = useState(null); 
+
 
   function addTask() {
-    const obj = { id: Date.now(), task: input };
-    setTask([...Tasks, obj]);
-    setInput("");
+    if (editingId) {
+  
+      setTask(
+        Tasks.map((task) =>
+          task.id === editingId ? { ...task, taskToDo: input } : task
+        )
+      );
+      setEditingId(null); 
+    } else {
+      
+      const obj = { id: Date.now(), taskToDo: input };
+      setTask([...Tasks, obj]);
+    }
+    setInput(""); 
   }
 
   function Delete(id) {
     setTask(Tasks.filter((obj) => obj.id !== id));
   }
 
-  // function edit(task){
-
-  // }
+  function edit(id) {
+    const taskToEdit = Tasks.find((task) => task.id === id);
+    setInput(taskToEdit.task);
+    setEditingId(id); 
+  }
 
   return (
     <>
@@ -26,14 +41,14 @@ function TodoList() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={addTask}>Add Task</button>
+      <button onClick={addTask}>{editingId ? "Edit Task" : "Add Task"}</button>
       <ul>
         {Tasks.map((item) => {
           return (
             <li key={item.id}>
               {item.task}
               <button onClick={() => Delete(item.id)}>Delete</button>
-              <button>Edit</button>
+              <button onClick={() => edit(item.id)}>Edit</button>
             </li>
           );
         })}
