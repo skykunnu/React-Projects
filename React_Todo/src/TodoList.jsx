@@ -28,8 +28,8 @@ function TodoList() {
   }
 
   function edit(id) {
-    const taskToEdit = Tasks.find((task) => task.id === id);
-    setInput(taskToEdit.task);
+    const taskToEdit = Tasks.find((task) => task.id === id); // returning an object having the same id which is passed as an argument. 
+    setInput(taskToEdit.task); // returned object task will set into setInput. 
     setEditingId(id); 
   }
 
