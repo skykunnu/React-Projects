@@ -51,7 +51,7 @@ function App() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <div className="personal-details border-gray-400 border-2 mx-2 my-4 rounded-lg">
+        <div className="personal-details border-gray-400 border-2 mx-2 mt-2 mb-5 rounded-lg">
           <h1 className="px-2 text-lg font-semibold bg-gray-400">Personal Details</h1>
           <hr />
           <div className="flex gap-8 my-4">
@@ -164,7 +164,7 @@ function App() {
         </div>
 
         {/* Parent/Guardian Details */}
-        <div className="parent/gaurdian-details border-gray-400 border-2 mx-2 my-4 rounded-lg">
+        <div className="parent/gaurdian-details border-gray-400 border-2 mx-2 mt-2 mb-5 rounded-lg">
           <h1 className="px-2 text-lg font-semibold bg-gray-400">Parent/ Guardian Details</h1>
           <hr />
           <div className="flex gap-8 my-4">
@@ -196,7 +196,7 @@ function App() {
         </div>
 
         {/* Residential Details */}
-        <div className="Residential-details border-2 border-gray-400 mx-2 my-4 rounded-lg">
+        <div className="Residential-details border-2 border-gray-400 mx-2 mt-2 mb-5 rounded-lg">
           <h1 className="px-2 text-lg font-semibold bg-gray-400">Residential Details</h1>
           <hr />
           <div className="flex gap-8 my-4">
@@ -238,12 +238,12 @@ function App() {
         </div>
 
         {/* Education Details */}
-        <div className="Education-details border-2 border-gray-400 mx-2 my-4 rounded-lg">
+        <div className="Education-details border-2 border-gray-400 mx-2 mt-2 mb-5 rounded-lg">
           <h1 className="px-2 text-lg font-semibold bg-gray-400">Education Details</h1>
           <hr />
           <div className="flex gap-8 my-4">
             <label htmlFor="status" className="w-36 mx-2">
-              Are you a:
+              Are you a
             </label>
             <div className="flex gap-10">
               <span className="flex gap-2">
@@ -310,7 +310,7 @@ function App() {
         </div>
 
         {/* Course Details */}
-        <div className="Course-details border-2 border-gray-400 mx-2 my-4 rounded-lg">
+        <div className="Course-details border-2 border-gray-400 mx-2 mt-2 mb-5 rounded-lg">
           <h1 className="px-2 text-lg font-semibold bg-gray-400">Course Details</h1>
           <hr />
           <div className="flex gap-8 my-4">
