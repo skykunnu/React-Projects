@@ -206,7 +206,7 @@ function App() {
                 <img
                   src={aadhaarPreviews.front}
                   alt="Aadhaar Front Preview"
-                  className="mt-2 w-[200px] h-auto border"
+                  className="mt-2 w-[200px] h-[15rem]"
                 />
               )}
             </div>
@@ -222,7 +222,7 @@ function App() {
                 <img
                   src={aadhaarPreviews.back}
                   alt="Aadhaar Back Preview"
-                  className="mt-2 w-[200px] h-auto border"
+                  className="mt-2 w-[200px] h-[15rem]"
                 />
               )}
             </div>
