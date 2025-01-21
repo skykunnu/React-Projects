@@ -14,15 +14,21 @@ function App() {
     localAddress: "",
     permanentAddress: "",
     sameAsLocal: false,
-    status: "",
+    status: "Student",
     qualification: "",
     year: "",
     college: "",
     course: "",
     source: "",
+    friendName:"",
   });
 
-  const handleInputChange = (e) => {
+  const [isChecked,setIsChecked]=useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+
+  function handleInputChange(e){
+
     const { name, value, type, checked, files } = e.target;
     if (type === "checkbox") {
       setFormValues((prev) => ({
@@ -43,10 +49,30 @@ function App() {
     }
   };
 
-  const handleSubmit = (e) => {
+  function handleToggleChange(){
+    setIsChecked((prev) => !prev); 
+    setShowPopup(true); 
+
+  };
+
+  function handleSubmit(e){
     e.preventDefault();
     console.log("Form Values:", formValues);
+
   };
+
+
+  function handlePopupAgree(){
+    setIsChecked(true); 
+    setShowPopup(false); 
+  };
+
+  function handlePopupCancel(){
+    setIsChecked(false); 
+    setShowPopup(false); 
+  };
+
+
 
   return (
     <>
@@ -294,7 +320,7 @@ function App() {
               onChange={handleInputChange}
             />
           </div>
-          <div className="flex gap-8 my-4">
+          {formValues.status==="Student" && (<div className="flex gap-8 my-4">
             <label htmlFor="college" className="w-36 mx-2">
               College / University
             </label>
@@ -306,7 +332,8 @@ function App() {
               value={formValues.college}
               onChange={handleInputChange}
             />
-          </div>
+          </div>)}
+          
         </div>
 
         {/* Course Details */}
@@ -375,25 +402,111 @@ function App() {
                 />
                 <label htmlFor="friend">Friend</label>
               </span>
+             
+              
               <span className="flex gap-2 py-3">
                 <input
                   type="radio"
                   name="source"
                   value="Other"
-                  checked={formValues.source === "Other"}
+                  checked={formValues.source === "collegeTPO"}
                   onChange={handleInputChange}
                 />
-                <label htmlFor="other">Other</label>
+                <label htmlFor="other">College TPO</label>
               </span>
             </div>
           </div>
+
+          <div>
+              {formValues.source === "Friend" && (
+            <span className="flex  gap-2 py-3">
+              <label htmlFor="friendName" className="w-[10rem] mx-2">
+                Friends Name
+              </label>
+              <input
+                type="text"
+                name="friendName"
+                placeholder="Enter your friend's name"
+                className="border w-[15rem]  h-7 ml-2"
+                value={formValues.friendName}
+                onChange={handleInputChange}
+              />
+            </span>
+          )}
+              </div>
+              
+<div className='flex gap-2'>
+<p className='mx-2'>Do you agree to the terms and conditions?</p>
+
+
+ <label className=" relative w-16 h-8 mb-2">
+    <input
+        type="checkbox"
+        id="agree"
+        name="agree"
+        className="opacity-0 w-0 h-0"
+        checked={isChecked}
+        onChange={handleToggleChange}
+    />
+    <span
+        className={`absolute top-0 left-0 w-full h-full rounded-full transition-all duration-300 ${isChecked ? 'bg-green-500' : 'bg-gray-400'
+            }`}
+    ></span>
+    <span
+        className={`absolute top-1 left-1 w-6 h-6 bg-white rounded-full transition-all duration-300 ${isChecked ? 'transform translate-x-8' : ''
+            }`}
+    ></span>
+</label>
+</div>
+
+{showPopup && (
+          <div className="popup-overlay fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div className="popup bg-white p-6 rounded shadow-lg text-center">
+              <h2 className="text-3xl font-semibold mb-4">Terms and Conditions</h2>
+              <p className=" text-xl my-1  text-left">
+                You agree to the following :-
+              </p>
+              <div className='w-50 my-10 text-left'>
+                
+                  <li>You have understood the course content.</li>
+                  <li>You have understood the course duration.</li>
+                  <li>You have cleared all your doubts regarding the course,the content,and the duration.</li>
+                  <li>Fees once paid is not refundable.</li>
+                  <li>In case of uninformed leave, I will not be eligible for a backup.</li>
+                  <li>7 days or more of leave without prior permission would result in termination of registration.</li>
+        
+              </div>
+              <div className="flex justify-center gap-4">
+                <button
+                  className="px-4 py-2 bg-green-500 text-white rounded"
+                  onClick={handlePopupAgree}
+                >
+                  Agree
+                </button>
+                <button
+                  className="px-4 py-2 bg-gray-400 text-white rounded"
+                  onClick={handlePopupCancel}
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         </div>
 
         {/* Submit Button */}
         <div className="mx-4 text-center bg-sky-500 text-black my-4 rounded-lg">
-          <button type="submit" className="py-2 text-lg font-semibold">
-            Submit
-          </button>
+        <button
+    type="submit"
+    value="Submit"
+    disabled={!isChecked}
+    className={`px-4 py-2 rounded ${isChecked
+        ? 'bg-green-500 cursor-pointer w-full'
+        : 'cursor-not-allowed'
+        } text-white`}
+          >Submit</button>
         </div>
       </form>
     </>
@@ -401,3 +514,7 @@ function App() {
 }
 
 export default App;
+
+
+
+
