@@ -7,8 +7,8 @@ function App() {
     phone: "",
     dob: "",
     gender: "",
-    aadhaar1: null,
-    aadhaar2: null,
+    aadhaarFront: null,
+    aadhaarBack: null,
     parentName: "",
     parentPhone: "",
     localAddress: "",
@@ -26,10 +26,31 @@ function App() {
   const [isChecked,setIsChecked]=useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
+  const [aadhaarPreviews, setAadhaarPreviews] = useState({
+    front: null,
+    back: null,
+  });
 
   function handleInputChange(e){
 
     const { name, value, type, checked, files } = e.target;
+
+    if (type === "file" && files?.length) {
+      const file = files[0];
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        setAadhaarPreviews((prev) => ({
+          ...prev,
+          [name === "aadhaarFront" ? "front" : "back"]: reader.result,
+        }));
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+
+
     if (type === "checkbox") {
       setFormValues((prev) => ({
         ...prev,
@@ -173,18 +194,38 @@ function App() {
               Aadhaar Card
             </label>
             <span className="flex gap-2">
+            <div>
               <input
                 type="file"
-                name="aadhaar1"
+                name="aadhaarFront"
                 className="border w-[20rem]"
+                accept='images/*'
                 onChange={handleInputChange}
               />
+                 {aadhaarPreviews.front && (
+                <img
+                  src={aadhaarPreviews.front}
+                  alt="Aadhaar Front Preview"
+                  className="mt-2 w-[200px] h-auto border"
+                />
+              )}
+            </div>
+            <div>
               <input
                 type="file"
-                name="aadhaar2"
+                name="aadhaarBack"
                 className="border w-[20rem]"
+                accept='images/*'
                 onChange={handleInputChange}
               />
+              {aadhaarPreviews.back && (
+                <img
+                  src={aadhaarPreviews.back}
+                  alt="Aadhaar Back Preview"
+                  className="mt-2 w-[200px] h-auto border"
+                />
+              )}
+            </div>
             </span>
           </div>
         </div>
@@ -512,7 +553,6 @@ function App() {
     </>
   );
 }
-
 export default App;
 
 
