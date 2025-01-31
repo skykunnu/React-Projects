@@ -6,9 +6,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React_App</title>
-    <script src="https://unpkg.com/react"></script>
+    <!-- Below are the several packages needed to run react ie react, react-dom & babel  -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel is a transpiler( ie translator) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 </head>
 <body>
-    <script src="./app.js"></script>
+
+<div id="root"></div>
+<script type="text/babel">
+
+function MyApp(){ // function name will always start from capital letter 
+    return <h1>Hello World</h1>
+}
+
+const container=document.getElementById("root")
+const root=ReactDOM.createRoot(container)
+root.render(<MyApp />);
+
+</script>
+
+
+
+
+
+
 </body>
 </html>

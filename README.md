@@ -26,6 +26,17 @@ declarative - khud ka kaam dusro se karwana (dependent)
 
 - Babel - It is a transpiler which converts jsx code into html code so that old browser can understood the code.
 
+- JSX(Javascript XML) - JSX is a syntax Extension (ie a js file can be extended into jsx) meaning I can do whatever things in jsx that I did in js. 
 
+- Rules of writing JSX
 
+-> We cannot return multiple elements. if we want to do so wrap it under div or fragments. when jsx converts into js it converts into function call, 
+
+-> JSX uses cameCasing. 
+
+-> JSX uses className reason to avoid naming conflict. 
+
+-> In JSX you have to explicitly close the tags. 
+
+-> 
 
