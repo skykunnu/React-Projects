@@ -6,6 +6,8 @@ package-lock.json is an extended version of package.json.
 
 gitignore and readme are important only for github not for react. 
 
-eslint file tells us about errors. 
+eslint file tells us about errors in the program.
+
+
 
 

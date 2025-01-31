@@ -46,7 +46,7 @@ function TodoList() {
         {Tasks.map((item) => {
           return (
             <li key={item.id}>
-              {item.task}
+              {item.taskToDo}
               <button onClick={() => Delete(item.id)}>Delete</button>
               <button onClick={() => edit(item.id)}>Edit</button>
             </li>
