@@ -1,4 +1,4 @@
-# React-Projects
+# React
 
 - Node modules are the heart of react files.
 
@@ -28,6 +28,12 @@ declarative - khud ka kaam dusro se karwana (dependent)
 
 - JSX(Javascript XML) - JSX is a syntax Extension (ie a js file can be extended into jsx) meaning I can do whatever things in jsx that I did in js. 
 
+- JSX was created by facebook for react only. 
+
+- JSX prevents XSS attacks. 
+
+- In JSX you can pass style as an object. 
+
 - Rules of writing JSX
 
 -> We cannot return multiple elements. if we want to do so wrap it under div or fragments. when jsx converts into js it converts into function call, 
@@ -38,5 +44,21 @@ declarative - khud ka kaam dusro se karwana (dependent)
 
 -> In JSX you have to explicitly close the tags. 
 
--> 
+
+
+- What is a component in react ? 
+
+->  A component is a function that returns a UI element. 
+
+-> react recommends to write the first letter of function name in caps because it helps react to differentiate between html and components.
+
+
+- What is Props? 
+
+-> It is simply a arguments to a component. 
+
+-> Props are immutable. 
+
+
+
 
