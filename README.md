@@ -14,7 +14,7 @@ Vite is a modern frontend build tool that is much faster than webpack for creati
 
 - features it provide are:-
 
-1. Super fast development server, uses ES modules to serve files directly to the browser.
+1. Super fast development server, uses ES modules (import/export different files) to serve files directly to the browser.
 
 2.  Faster HMR (Hot module representation) means when you change a file, only that module is updated, not the entire app. 
 
@@ -140,5 +140,18 @@ declarative - khud ka kaam dusro se karwana (dependent). you define the target H
 * Content/value is derived at runtime. 
 * <h1>{username}<h1>
 
+
+# useRef() hook
+
+- It is nothing but say react way of doing getElementById().
+
+# What is render?
+
+- calling your component with updated value. 
+and returns VDOM (virtual DOM).
+
+# What is useState()?
+
+- 
 
 
