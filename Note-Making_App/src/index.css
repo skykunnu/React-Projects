@@ -43,4 +43,10 @@
 .note{
   width: 10rem;
   height: 10rem;
+  position: relative;
+}
+.cross{
+position: relative;
+left: 9rem;
+font-size: 20px;
 }

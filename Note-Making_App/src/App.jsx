@@ -1,4 +1,4 @@
-
+import { TiDeleteOutline } from "react-icons/ti";
 import {useState} from 'react';
 function App() {
 
@@ -18,6 +18,11 @@ setColor('');
 
 }
 
+function handleDeleteNote(id){
+  setAllMessage(allMessage.filter((item)=>item.id!==id));
+
+}
+
 
 
   return (
@@ -33,6 +38,7 @@ setColor('');
      {allMessage.map((item)=>{
       return(
         <div key={item.id} style={{backgroundColor:item.Color}} className='note'>
+          <span className='cross' onClick={()=>handleDeleteNote(item.id)}><TiDeleteOutline /></span>
           {item.Message}
         </div>
       )
