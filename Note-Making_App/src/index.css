@@ -13,6 +13,8 @@
   .noteDiv2{
     width: 50%;
     background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .taskArea{
@@ -36,4 +38,9 @@
 
 .colorPalette{
     margin: 10px;
+}
+
+.note{
+  width: 10rem;
+  height: 10rem;
 }
