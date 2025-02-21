@@ -11,7 +11,11 @@
 
 # Library
 
-- In library you are in the control of the flow of the application and you call the library functions when needed. 
+- In library you are in the control of the flow of the application and you call the library functions when needed.
+
+- It provides specific functionality. 
+
+- It offers more flexibility because you can pick and choose which libraries to use without adhering to a strict structure. 
 
 ex- React
 
@@ -48,7 +52,7 @@ Vite is a modern frontend build tool that is much faster than webpack for creati
 
 1. Super fast development server, uses ES modules (import/export different files) to serve files directly to the browser.
 
-2.  Faster HMR (Hot module representation) means when you change a file, only that module is updated, not the entire app. 
+2.  Faster HMR (Hot module representation) means when you make changes in a file, only that module is updated, not the entire app. 
 
 3. simple configuration. 
 
@@ -59,8 +63,7 @@ Vite is a modern frontend build tool that is much faster than webpack for creati
 
 -  It is a package bundler for js app. it compiles, bundles, and optimizes multiple files (js, css, images etc) into a single or smaller set of output files for improved performance and efficiency. 
 
-- HMR (Hot module replacement):- Updates changes in the browser without full page reload, improving dev speed. 
-
+- HMR (Hot module replacement):- It is a feature in modern web dev tools like webpack, vite or parcel that allows modules (eg: Js, CSS) to be updated in a running application without a full page reload. 
 
 
 
@@ -103,7 +106,7 @@ declarative - khud ka kaam dusro se karwana (dependent). you define the target H
 
 # React comes in two parts - react and react-DOM
 
-# Ways of creating react project 
+# 4 Ways of creating react project 
 
 -> CRA (create-react-app)
 -> VITE
