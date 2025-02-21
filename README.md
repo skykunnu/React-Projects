@@ -8,6 +8,38 @@
 
 - In SPA (Single Page Application) only content that user needs to be updated gets loaded not the entire page/website.
 
+
+# Library
+
+- In library you are in the control of the flow of the application and you call the library functions when needed. 
+
+ex- React
+
+# SPA (Single Page Application)
+
+SPA is a web application that loads and updates contents dynamically without refreshing entire page. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Why vite?
 
 Vite is a modern frontend build tool that is much faster than webpack for creating react app. 
@@ -153,5 +185,9 @@ and returns VDOM (virtual DOM).
 # What is useState()?
 
 - 
+
+
+
+
 
 
