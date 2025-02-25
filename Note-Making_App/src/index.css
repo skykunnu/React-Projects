@@ -15,10 +15,10 @@
     background-color: lightgray;
     display: flex;
     flex-wrap: wrap;
-    align-items: start;
+    align-items: flex-start;
+    align-content: start;
     justify-content: start;
-    padding-left: 8px;
-    padding-top: 5px;
+    gap: 2px;
     position: relative;
 }
 
@@ -52,10 +52,10 @@
   color: white;
   position: relative;
   border-radius: 10px;
-  padding-right: 2px;
-  margin-right: 5px;
+  margin:2px;
 
 }
+
 .cross{
 position: absolute;
 right: -1%;
