@@ -1,13 +1,66 @@
-Node modules are the heart of react files.
+# Important topics to learn react
 
-package.json tells us about the tools and their versions that are necessary for the react file. 
+> Brief Intro of react
+> Using react via CDN
+> Setup react app via webpack
+> Module 4
+    - Introduction to JSX
+    - Element vs Component
+    - Conditional rendering 
 
-package-lock.json is an extended version of package.json. 
+> Module 5
+    - Intro to props and children 
+    - What are import & export terminologies
 
-gitignore and readme are important only for github not for react. 
+> Module 6
+    - How to render data from lists
+    - Importance of keys prop
 
-eslint file tells us about errors in the program.
+> Module 7 
 
+    - What are hooks
+    - Understanding useState
+    - What is re render.
+    - Misuse of state variables 
 
+> What is react fiber and Reconciliation
 
+> Exploring useEffect hooks
 
+> All about useLayoutEffect 
+
+> All about useRef hook
+
+> forwardRef Api
+
+> All about callback
+
+> All about useCallback 
+
+> All about useMemo Hook 
+
+> Understanding Memo API 
+
+> React Optimization via Lazy API and Suspense Component 
+
+> React createContext API and useContext hook 
+
+> Introduction to createPortal in react-dom 
+
+> Introduction to Redux and Redux-toolkit 
+
+> Introduction to React Router 
+
+> What are React Design Patterns? 
+
+> React HOC (Higher Order Component) Design Pattern 
+
+> React Render Props Pattern 
+
+> React Composition or Compound Pattern 
+
+> React Custom Hook Pattern 10:02:21> How to fetch data from an API and Image Optimizations 
+
+> Dealing with input form and optimizations 
+
+> How to style components in React 

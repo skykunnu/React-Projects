@@ -23,6 +23,21 @@ ex- React
 
 SPA is a web application that loads and updates contents dynamically without refreshing entire page. 
 
+# Basic React Project requirements
+
+- Node modules are the heart of react files.
+
+- package.json tells us about the tools and their versions that are necessary for the react file. 
+
+- package-lock.json is an extended version of package.json. 
+
+- gitignore and readme are important only for github not for react. 
+
+- eslint file tells us about errors in the program.
+
+
+
+
 
 
 
