@@ -42,6 +42,7 @@ function App() {
             onChange={(e) => setText(e.target.value)}
             required
           ></textarea>
+          <div className='paletteDiv'>
           <input
             type="color"
             className="colorPalette"
@@ -51,6 +52,7 @@ function App() {
           <button className="btn" type="submit">
             Add Note
           </button>
+          </div>
         </form>
       </div>
 
@@ -65,12 +67,16 @@ function App() {
               style={{ backgroundColor: item.Color }}
               className="note"
             >
-              <span className="cross" onClick={() => handleDeleteNote(item.id)}>
-                <TiDeleteOutline />
-              </span>
-              <span className="message">{item.Message}</span>
+              <div className="crossDiv" onClick={() => handleDeleteNote(item.id)}>
+                <span className='cross'><TiDeleteOutline /></span>
+              </div>
+              <div className="message">
+                {item.Message}
+              </div>
 
-              <div className="date">{item.date}</div>
+              <div>
+                <p className="date">{item.date}</p>
+                </div>
             </div>
           );
         })}
