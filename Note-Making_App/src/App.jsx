@@ -21,13 +21,21 @@ function App() {
   }
 
   function handleDeleteNote(id) {
-    setAllMessage(allMessage.filter((item) => item.id !== id));
+    const deletedNote = allMessage.find((item) => item.id === id);
+    if (deletedNote) {
+      setUndoNote([...undoNote, deletedNote]); 
+      setAllMessage(allMessage.filter((item) => item.id !== id));
+    }
+    
   }
+  
 
   function undoMessage() {
-    const note = allMessage;
-    const lastCreated = note.pop();
-    setUndoNote((prev) => [...prev, lastCreated]);
+      if (undoNote.length > 0) {
+      const lastDeletedNote = undoNote.pop(); 
+      setAllMessage([...allMessage, lastDeletedNote]); 
+      setUndoNote([...undoNote]); 
+    }
   }
 
   return (
@@ -67,7 +75,7 @@ function App() {
               style={{ backgroundColor: item.Color }}
               className="note"
             >
-              <div className="crossDiv" onClick={() => handleDeleteNote(item.id)}>
+              <div onClick={() => handleDeleteNote(item.id)}>
                 <span className='cross'><TiDeleteOutline /></span>
               </div>
               <div className="message">
