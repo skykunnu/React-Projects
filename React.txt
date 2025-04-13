@@ -1,4 +1,4 @@
-# Important topics to learn react
+# Important topics to learn in react
 
 > Brief Intro of react
 > Using react via CDN

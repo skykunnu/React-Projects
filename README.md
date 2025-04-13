@@ -25,7 +25,7 @@ SPA is a web application that loads and updates contents dynamically without ref
 
 # Basic React Project requirements
 
-- Node modules are the heart of react files.
+- Node modules are the heart of react files means it contains all the packages of your project that are being fetched from the CDN and stored in your local machine. 
 
 - package.json tells us about the tools and their versions that are necessary for the react file. 
 
@@ -36,28 +36,36 @@ SPA is a web application that loads and updates contents dynamically without ref
 - eslint file tells us about errors in the program.
 
 
+# Way of injecting React.js to your project.
+
+# 1.> ⁡⁣⁣CDN- Content Delivery network⁡
+
+It is a distrbuted network of servers that cache web content closer to users, improving performance and reduncing loading times. 
+
+-- How a CDN Works:
+
+1. ⁡⁣⁣⁢It helps reduce latency⁡ meaning when a user request a webpage, the CDN 
+serves the content from closest server, reducing load times. 
+
+2. ⁡⁣⁣⁢Caching Content⁡: A CDN stores copies of website resources on multiple
+servers located on different geographical regions. 
+
+3. ⁡⁢⁣⁣Load Balancing⁡: It distributes traffic across multiple servers, preventing A
+single server from being overloaded. 
+
+4. ⁡⁣⁣⁢Security Enhancement⁡: CDNs help mitigate DDos attacks, secure data transmission
+, and block malicious traffic. 
+
+# What is the difference between dev dependencies vs dependencies
+
+-> Dev dependencies - These are the packages your project needs to run in production. 
+
+ex- react, react-dom & mongoose.
 
 
+-> dependencies - These are packages that are only needed during development or for building/testing your project. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ex- nodemon, ES-Lint & jest.
 
 # Why vite?
 
