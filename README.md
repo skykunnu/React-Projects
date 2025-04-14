@@ -40,7 +40,7 @@ SPA is a web application that loads and updates contents dynamically without ref
 
 # 1.> ⁡⁣⁣CDN- Content Delivery network⁡
 
-It is a distrbuted network of servers that cache web content closer to users, improving performance and reduncing loading times. 
+It is a distrbuted network of servers that cache web content closer to users, improving performance and reducing loading times. 
 
 -- How a CDN Works:
 
