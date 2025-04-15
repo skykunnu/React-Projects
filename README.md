@@ -67,6 +67,24 @@ ex- react, react-dom & mongoose.
 
 ex- nodemon, ES-Lint & jest.
 
+
+# What is the difference between caret and tilde ?
+
+-> Caret(^)- It Updates on all the future minor/patch versions. ex:- (^1.2.3) will use releases from 1.2.3 to 2.0.0 (not including).
+
+-> tilde(~)- It will allow updates to the patch version only. ex:- (~1.2.3) will use releases from 1.2.3, 1.2.4, 1.2.5 but not 1.3.0. 
+
+
+
+
+
+
+
+
+
+
+
+
 # Why vite?
 
 Vite is a modern frontend build tool that is much faster than webpack for creating react app. 
@@ -208,7 +226,7 @@ declarative - khud ka kaam dusro se karwana (dependent). you define the target H
 - calling your component with updated value. 
 and returns VDOM (virtual DOM).
 
-# What is useState()?
+# What is a useState()?
 
 - 
 
