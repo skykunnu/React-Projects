@@ -7,14 +7,18 @@ function TodoList() {
 
 
   function addTask() {
+
+    // updating an exisitng task. 
     if (editingId) {
-  
       setTask(
         Tasks.map((task) =>
           task.id === editingId ? { ...task, taskToDo: input } : task
         )
       );
       setEditingId(null); 
+      
+
+      // Creating a new task. 
     } else {
       
       const obj = { id: Date.now(), taskToDo: input };
@@ -29,7 +33,7 @@ function TodoList() {
 
   function edit(id) {
     const taskToEdit = Tasks.find((task) => task.id === id); // returning an object having the same id which is passed as an argument. 
-    setInput(taskToEdit.task); // returned object task will set into setInput. 
+    setInput(taskToEdit.taskToDo); // returned object task will set into setInput. 
     setEditingId(id); 
   }
 

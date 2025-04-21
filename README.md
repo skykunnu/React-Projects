@@ -72,18 +72,7 @@ ex- nodemon, ES-Lint & jest.
 
 -> Caret(^)- It Updates on all the future minor/patch versions. ex:- (^1.2.3) will use releases from 1.2.3 to 2.0.0 (not including).
 
--> tilde(~)- It will allow updates to the patch version only. ex:- (~1.2.3) will use releases from 1.2.3, 1.2.4, 1.2.5 but not 1.3.0. 
-
-
-
-
-
-
-
-
-
-
-
+-> tilde(~)- It will allow updates to the patch version only. ex:- (~1.2.3) will use releases from 1.2.3, 1.2.4, 1.2.5 but not 1.3.0.
 
 # Why vite?
 
@@ -93,7 +82,7 @@ Vite is a modern frontend build tool that is much faster than webpack for creati
 
 1. Super fast development server, uses ES modules (import/export different files) to serve files directly to the browser.
 
-2.  Faster HMR (Hot module representation) means when you make changes in a file, only that module is updated, not the entire app. 
+2.  Faster HMR (Hot module replacement) means when you make changes in a file, only that module is updated, not the entire app. 
 
 3. simple configuration. 
 
