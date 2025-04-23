@@ -141,7 +141,7 @@ declarative - khud ka kaam dusro se karwana (dependent). you define the target H
 -> CRA (create-react-app)
 -> VITE
 -> CDN 
--> Manual (npm init)
+-> Manual (npm init) (Parcel)
 
 
 # Babel - It is a transpiler which converts jsx code into html code so that old browser can understood the code.
